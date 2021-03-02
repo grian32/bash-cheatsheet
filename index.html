@@ -21,9 +21,46 @@
 
         <!-- CSS -->
         <link href="index.css" rel="stylesheet">
+
+        <!-- highlight.js -->
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.5.0/build/styles/nord.min.css">
+        <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.5.0/build/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
     </head>
 
     <body>
         <h1> Bash Cheatsheet </h1>
+        
+        <p>
+            A small and to the point cheatsheet for bash scripting
+        </p>
+
+        <h2> Shebang </h2>
+        <p>
+            <pre><code class="bash">#!/bin/bash</code></pre>
+        </p>
+
+        <h2> Variable Declaration </h2>
+        <p>
+            It's required that there are no spaces between the variable name and its contents.
+            <pre><code class="bash">hi="hi"</code></pre>
+            <br>    
+            Assigning the output of a command to a variable:
+            <pre><code class="bash">hi_contents=$(cat hi.txt)</code></pre>
+        </p>
+
+        <h2> Basic Commands </h2>
+        <h3> echo </h3>
+        This command is the basic print command:
+        <pre><code class="bash">echo "Hello, World!"
+echo "${variable_name_here}"
+echo "hello ${variable_name_here}"</code></pre>
+        <h3> cat </h3>
+        This command prints the contents of the given file:
+        <pre><code class="bash"> cat file_name_here </code></pre>
+        <!-- TODO add more commands -->
+        <h2> Control Flow </h2>
+        <h3> If Statements</h3>
+        
     </body>
 </html>
