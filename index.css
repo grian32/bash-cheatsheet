@@ -1,0 +1,17 @@
+/* I just yoinked the css from another project */
+
+* {
+    font-family: "Fira Mono", monospace;
+    color:#E5E9F0;   
+}
+
+body, input, textarea {
+    background-color: #3B4252;
+}
+
+body {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
