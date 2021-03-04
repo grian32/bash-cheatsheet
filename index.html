@@ -51,13 +51,19 @@
 
         <h2> Basic Commands </h2>
         <h3> echo </h3>
-        This command is the basic print command:
+        This command is the basic print command
         <pre><code class="bash">echo "Hello, World!"
 echo "${variable_name_here}"
 echo "hello ${variable_name_here}"</code></pre>
         <h3> cat </h3>
-        This command prints the contents of the given file:
+        This command prints the contents of the given file
         <pre><code class="bash"> cat file_name_here </code></pre>
+        <h3> ls </h3>
+        Lists all the files and directories in the given directory
+        <pre><code class="bash"> ls /absolute/path/to/dir/             
+ls relative/path/to/directory
+# also supports wildcards and that kind of thing
+ls *.tx</code></pre>
         <!-- TODO add more commands -->
         <h2> Control Flow </h2>
         <h3> If Statements</h3>
@@ -66,9 +72,21 @@ then
     echo "hi"
 fi
 
+# multiple conditions in one if
 if ["$somevar" == "hi"] || ["somevar" != "bye"]
 then
     echo "hi but not bye"
 fi</code></pre></p>
+        <h3> For Loops </h3>
+        <p><pre><code class="bash">for i in {1..5}
+do
+    echo "$i"
+done
+
+# traditional for loop
+for ((i = 1; i <= 5; i++))
+do
+    echo "$1"
+done</code></pre></p>
     </body>
 </html>
