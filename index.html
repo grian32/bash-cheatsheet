@@ -42,6 +42,32 @@
             <pre><code class="bash">#!/bin/bash</code></pre>
         </p>
 
+        <h2> Strings </h2>
+        <h3> Escaped Strings </h3>
+        <p> 
+            Escaped strings are marked by double quotes and process escapes, also has interpolation
+            <pre><code class="bash">"hi\nbye" # escapes the new line\
+
+# also used for multiline strings
+"hi
+bye"
+
+#interpolation
+"${var}"
+</code></pre> 
+        </p>
+
+        <h3> Unescaped Strings </h3>
+        <p>
+            Unescaped strings are marked by signle quotes and treat escapes as raw characters
+            <pre><code class="bash">"hi\nbye" # hi\nbye, literal \ and n
+
+# no interpolation
+'${var}' # literal characters, doesnt interpole the variable</code></pre>
+        </p>
+
+        <h3>  </h3>
+
         <h2> Variable Declaration </h2>
         <p>
             It's required that there are no spaces between the variable name and its contents.
