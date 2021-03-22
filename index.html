@@ -1,52 +1,52 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <!-- Primary Meta Tags -->
-        <title>Bash Cheatsheet</title>
-        <meta name="title" content="Bash Cheatsheet">
-        <meta name="description" content="A small and to the point cheatsheet for bash scripting">
-    
-        <!-- Open Graph / Facebook -->
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://metatags.io/">
-        <meta property="og:title" content="Bash Cheatsheet">
-        <meta property="og:description" content="A small and to the point cheatsheet for bash scripting">
+	<head>
+		<!-- Primary Meta Tags -->
+		<title>Bash Cheatsheet</title>
+		<meta name="title" content="Bash Cheatsheet" />
+		<meta name="description" content="A small and to the point cheatsheet for bash scripting" />
 
-        <!-- Twitter -->
-        <meta property="twitter:card" content="summary_large_image">
-        <meta property="twitter:url" content="https://metatags.io/">
-        <meta property="twitter:title" content="Bash Cheatsheet">
-        <meta property="twitter:description" content="A small and to the point cheatsheet for bash scripting">
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://metatags.io/" />
+		<meta property="og:title" content="Bash Cheatsheet" />
+		<meta property="og:description" content="A small and to the point cheatsheet for bash scripting" />
 
-        <!-- CSS -->
-        <link href="index.css" rel="stylesheet">
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://metatags.io/" />
+		<meta property="twitter:title" content="Bash Cheatsheet" />
+		<meta property="twitter:description" content="A small and to the point cheatsheet for bash scripting" />
 
-        <!-- highlight.js -->
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.5.0/build/styles/nord.min.css">
-        <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.5.0/build/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script>
-    </head>
+		<!-- CSS -->
+		<link href="index.css" rel="stylesheet" />
 
-    <body>
-        <!-- I tried to make the formatting as nice as possible but highlight.js really scuffs formatting if you want multiline to look good -->
-        <h1> Bash Cheatsheet </h1>
-        
-        <p>
-            A small and to the point cheatsheet for bash scripting.
-            This is currently WIP.
-        </p>
+		<!-- highlight.js -->
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.5.0/build/styles/nord.min.css" />
+		<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.5.0/build/highlight.min.js"></script>
+		<script>
+			hljs.initHighlightingOnLoad();
+		</script>
+	</head>
 
-        <h2> Shebang </h2>
-        <p>
-            <pre><code class="bash">#!/bin/bash</code></pre>
-        </p>
+	<body>
+		<!-- I tried to make the formatting as nice as possible but highlight.js really scuffs formatting if you want multiline to look good -->
+		<h1> Bash Cheatsheet </h1>
 
-        <h2> Strings </h2>
-        <h3> Escaped Strings </h3>
-        <p> 
-            Escaped strings are marked by double quotes and process escapes, also has interpolation
-            <pre><code class="bash">"hi\nbye" # escapes the new line\
+		<h2> A small and to the point cheatsheet for bash scripting. This is currently WIP. </h2>
+		<br />
+
+		<h2> Shebang </h2>
+		<p> These are used to indicate the interpreter that will be used for execution. </p>
+		<pre><code class="bash">#!/bin/bash</code></pre>
+		<br />
+
+		<h2> Strings </h2>
+
+		<h3> Escaped Strings </h3>
+		<p> Escaped strings are marked by double quotes and process escapes. These also have interpolation. </p>
+		<pre><code class="bash">"hi\nbye" # \n escapes to a new line
 
 # also used for multiline strings
 "hi
@@ -54,69 +54,76 @@ bye"
 
 #interpolation
 "${var}"
-</code></pre> 
-        </p>
+</code></pre>
+		<br />
 
-        <h3> Unescaped Strings </h3>
-        <p>
-            Unescaped strings are marked by signle quotes and treat escapes as raw characters
-            <pre><code class="bash">"hi\nbye" # hi\nbye, literal \ and n
+		<h3> Unescaped Strings </h3>
+		<p> Unescaped strings are marked by single quotes and treat escapes as raw characters </p>
+		<pre><code class="bash">'hi\nbye' # hi\nbye, literal \ and n, backslash does not act as an escape character
 
 # no interpolation
-'${var}' # literal characters, doesnt interpole the variable</code></pre>
-        </p>
+'${var}' # literal characters, doesn't interpole the variable</code></pre>
+		<br />
 
-        <h3>  </h3>
+		<h2> Variable Declaration </h2>
 
-        <h2> Variable Declaration </h2>
-        <p>
-            It's required that there are no spaces between the variable name and its contents.
-            <pre><code class="bash">hi="hi"</code></pre>
-            <br>    
-            Assigning the output of a command to a variable:
-            <pre><code class="bash">hi_contents=$(cat hi.txt)</code></pre>
-        </p>
+		<p> Spaces aren't allowed between the variable name and the contents. </p>
+		<pre><code class="bash">hi="hi"</code></pre>
 
-        <h2> Basic Commands </h2>
-        <h3> echo </h3>
-        This command is the basic print command
-        <pre><code class="bash">echo "Hello, World!"
+		<p>To assign the output of a command to a variable:</p>
+		<pre><code class="bash">hi_contents=$(cat hi.txt)</code></pre>
+		<br />
+
+		<h2> Basic Commands </h2>
+
+		<h3> echo </h3>
+		This command is a basic print command.
+		<pre>
+            <code class="bash">echo "Hello, World!"
 echo "${variable_name_here}"
-echo "hello ${variable_name_here}"</code></pre>
-        <h3> cat </h3>
-        This command prints the contents of the given file
-        <pre><code class="bash">cat file_name_here </code></pre>
-        <h3> ls </h3>
-        Lists all the files and directories in the given directory
-        <pre><code class="bash">ls /absolute/path/to/dir/             
+echo "hello ${variable_name_here}"</code>
+        </pre>
+
+		<h3> cat </h3>
+		This command prints the contents of the given file.
+		<pre><code class="bash">cat file_name_here </code></pre>
+
+		<h3> ls </h3>
+		This lists all the files and directories in the given directory.
+		<pre><code class="bash">ls /absolute/path/to/dir/  
 ls relative/path/to/directory
 # also supports wildcards and that kind of thing
 ls *.txt</code></pre>
-        <h3> touch </h3>
-        Creates a empty file
-        <pre><code class="bash"></code>touch filenamehere</pre>
-        <h2> Control Flow </h2>
-        <h3> If Statements</h3>
-        <p><pre><code class="bash">if ["$somevar" == "hi"]
+
+		<h3> touch </h3>
+		This creates a empty file.
+		<pre><code class="bash">touch file_name.txt</code></pre>
+
+		<h2> Control Flow </h2>
+
+		<h3> If Statements</h3>
+		<pre><code class="bash">if ["$somevar" == "hi"]
 then
     echo "hi"
 fi
 
 # multiple conditions in one if
-if ["$somevar" == "hi"] || ["somevar" != "bye"]
+if ["$somevar" == "hi"] || ["somevar" != "bye"] # Uses boolean operators.
 then
     echo "hi but not bye"
-fi</code></pre></p>
-        <h3> For Loops </h3>
-        <p><pre><code class="bash">for i in {1..5}
+fi</code></pre>
+		<br />
+
+		<h3> For Loops </h3>
+		<pre><code class="bash">for i in {1..5}
 do
-    echo "$i"
+    echo "Your number is $i"
 done
 
 # traditional for loop
 for ((i = 1; i <= 5; i++))
 do
-    echo "$1"
-done</code></pre></p>
-    </body>
+    echo "Your number is $i"
+done</code></pre>
+	</body>
 </html>
