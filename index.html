@@ -43,31 +43,19 @@
         </p>
 
         <h2> Strings </h2>
-        <h3> Escaped Strings </h3>
-        <p> 
-            Escaped strings are marked by double quotes and process escapes, also has interpolation
-            <pre><code class="bash">"hi\nbye" # escapes the new line\
+        Strings are always literal, with no escaping done beforehand.
+        <pre><code class="bash">"hi there mate\n!" # = hi there mate\n!</code></pre>
+        Printing a string with escapes is done with your command of choice, a few examples are:
+        <pre><code class="bash"># echo with the -e argument
+echo -e "hi\nthere" # = hi
+                    #   there
 
-# also used for multiline strings
-"hi
-bye"
-
-#interpolation
-"${var}"
-</code></pre> 
-        </p>
-
-        <h3> Unescaped Strings </h3>
-        <p>
-            Unescaped strings are marked by signle quotes and treat escapes as raw characters
-            <pre><code class="bash">"hi\nbye" # hi\nbye, literal \ and n
-
-# no interpolation
-'${var}' # literal characters, doesnt interpole the variable</code></pre>
-        </p>
-
-        <h3>  </h3>
-
+# printf
+printf "hi\nthere" # = hi
+                   #   there</code></pre>
+        <br>
+        Without telling your command of choice to escape the strings though, it displays it literally, like so:
+        <pre><code class="bash">echo "hi\nthere" # = hi\nthere</code></pre> 
         <h2> Variable Declaration </h2>
         <p>
             It's required that there are no spaces between the variable name and its contents.
